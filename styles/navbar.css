@@ -1,0 +1,31 @@
+.navbar {
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+}
+
+.navbar button {
+  background: transparent;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.navbar button .menu {
+  height: 30px;
+  color: #fff !important;
+  width: 30px;
+}
+
+.navbar-header {
+  width: 40%;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-item a {
+  color: #fff !important;
+  font-weight: bold;
+  margin-left: 10px;
+}

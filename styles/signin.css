@@ -1,0 +1,40 @@
+.signin {
+  padding: 10px 15px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signin h4 {
+  margin-bottom: 40px;
+  color: tomato;
+  font-weight: bold;
+}
+
+.signin-box {
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-group input {
+  height: 50px;
+  outline: none;
+  border: 1px solid #999;
+}
+
+.signin-box button {
+  height: 50px;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 10px;
+  background: rgb(184, 12, 12);
+}
+
+.signin-box button:hover {
+  color: #fff;
+}
