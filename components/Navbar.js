@@ -14,45 +14,6 @@ function NavBar() {
     }
   };
 
-  const loggedRouter = () => {
-    return (
-      <li className="nav-item dropdown">
-        <a
-          className="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdownMenuLink"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          <img
-            src={auth.user.avatar}
-            alt={auth.user.avatar}
-            style={{
-              borderRadius: "50%",
-              width: "30px",
-              height: "30px",
-              transform: "translateY(-3px)",
-              marginRight: "3px",
-            }}
-          />{" "}
-          {auth.user.name}
-        </a>
-
-        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <Link href="/profile">
-            <a className="dropdown-item">Profile</a>
-          </Link>
-          {auth.user.role === "admin" && adminRouter()}
-          <div className="dropdown-divider"></div>
-          <button className="dropdown-item" onClick={handleLogout}>
-            Logout
-          </button>
-        </div>
-      </li>
-    );
-  };
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-danger">
       <div className="navbar-header">

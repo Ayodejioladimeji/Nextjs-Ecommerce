@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta name="description" content="NextJs E commerce" />
+          <meta name="description" content="Seller.com" />
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
