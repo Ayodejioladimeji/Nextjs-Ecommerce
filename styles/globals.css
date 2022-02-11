@@ -20,7 +20,10 @@ a {
 }
 
 /* ----------- Loading ------------- */
-@import url("./navbar.css");
+@import url('./navbar.css');
 
 /* ------------Signin------------------- */
-@import url("./signin.css");
+@import url('./signin.css');
+
+/* ------------Register------------------- */
+@import url('./register.css');

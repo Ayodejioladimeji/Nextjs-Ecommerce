@@ -1,4 +1,4 @@
-.signin {
+.register {
   padding: 130px 15px 0 15px;
   height: 100%;
   display: flex;
@@ -7,13 +7,13 @@
   justify-content: center;
 }
 
-.signin h4 {
+.register h4 {
   margin-bottom: 40px;
   color: tomato;
   font-weight: bold;
 }
 
-.signin-box {
+.register-box {
   width: 100%;
   max-width: 400px;
 }
@@ -24,7 +24,7 @@
   border: 1px solid #999;
 }
 
-.signin-box button {
+.register-box button {
   height: 50px;
   border: none;
   outline: none;
@@ -35,6 +35,6 @@
   background: rgb(184, 12, 12);
 }
 
-.signin-box button:hover {
+.register-box button:hover {
   color: #fff;
 }

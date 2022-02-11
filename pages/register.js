@@ -2,11 +2,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 
-const initialState = { email: '', password: '' };
+const initialState = { email: '', username: '', password: '' };
 
-const Signin = () => {
+const Register = () => {
   const [userData, setUserData] = useState(initialState);
-  const { email, password } = userData;
+  const { email, username, password } = userData;
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -14,14 +14,14 @@ const Signin = () => {
   };
 
   return (
-    <div className='signin'>
+    <div className='register'>
       <Head>
-        <title>Sign in Page</title>
+        <title>Register Page</title>
       </Head>
 
-      <h4>LOGIN TO CONTINUE</h4>
+      <h4>REGISTER TO CONTINUE</h4>
 
-      <div className='signin-box'>
+      <div className='register-box'>
         <form>
           <div className='form-group'>
             <label htmlFor='exampleInputEmail1'>Email address</label>
@@ -29,10 +29,22 @@ const Signin = () => {
               type='email'
               className='form-control'
               id='exampleInputEmail1'
-              aria-describedby='emailHelp'
               name='email'
               value={email}
               onChange={handleChangeInput}
+              placeholder='Provide your email'
+            />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='username'>Username</label>
+            <input
+              type='text'
+              className='form-control'
+              id='username'
+              name='username'
+              value={username}
+              onChange={handleChangeInput}
+              placeholder='Provide your username'
             />
           </div>
 
@@ -45,6 +57,7 @@ const Signin = () => {
               name='password'
               value={password}
               onChange={handleChangeInput}
+              placeholder='********'
             />
           </div>
 
@@ -53,9 +66,9 @@ const Signin = () => {
           </button>
 
           <p className='my-2'>
-            You don't have an account?{' '}
-            <Link href='/register'>
-              <a style={{ color: 'crimson' }}>Register Now</a>
+            Already a member?
+            <Link href='/signin'>
+              <a style={{ color: 'crimson' }}>Login Now</a>
             </Link>
           </p>
         </form>
@@ -64,4 +77,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Register;
