@@ -16,15 +16,14 @@ export default async (req, res) => {
 
 const register = async (req, res) => {
   try {
-    const { name, email, username, password } = req.body;
+    const { email, username, password } = req.body;
 
-    const errMsg = valid(name, email, username, password);
+    const errMsg = valid(email, username, password);
     if (errMsg) return res.status(400).json({ err: errMsg });
 
     const passwordHash = await bcrypt.hash(password, 12);
 
     const newUser = new Users({
-      name,
       email,
       username,
       password: passwordHash,

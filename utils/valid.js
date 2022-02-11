@@ -1,5 +1,5 @@
-const valid = (name, username, email, password) => {
-  if (!name || !username || !email || !password) {
+const valid = (username, email, password) => {
+  if (!username || !email || !password) {
     return 'Input fields cannot be empty';
   }
 

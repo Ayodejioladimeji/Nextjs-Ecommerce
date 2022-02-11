@@ -1,11 +1,13 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import valid from './../utils/valid';
+import { Context } from './../store/Context';
 
 const initialState = { email: '', username: '', password: '' };
 
 const Register = () => {
+  const [state, dispatch] = useContext(Context);
   const [userData, setUserData] = useState(initialState);
   const { email, username, password } = userData;
 
@@ -19,7 +21,9 @@ const Register = () => {
     e.preventDefault();
 
     const errMsg = valid(email, username, password);
-    if (errMsg) console.log(errMsg);
+    if (errMsg) return dispatch({ type: 'NOTIFY', payload: { error: errMsg } });
+
+    dispatch({ type: 'NOTIFY', payload: { success: 'Account Created' } });
   };
 
   return (
@@ -71,7 +75,7 @@ const Register = () => {
           </div>
 
           <button type='submit' className='btn w-100'>
-            Login
+            Register
           </button>
 
           <p className='my-2'>

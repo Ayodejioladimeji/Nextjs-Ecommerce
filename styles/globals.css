@@ -19,6 +19,34 @@ a {
   box-sizing: border-box;
 }
 
+/* The section for the toase */
+.toast {
+  width: 100% !important;
+  position: fixed;
+  top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+  color: #fff;
+  border-radius: 0 !important;
+  font-weight: 600;
+}
+
+.danger {
+  background: rgba(255, 0, 0, 0.363) !important;
+}
+
+.success {
+  background: rgba(0, 128, 0, 0.459) !important;
+}
+
+.cancel {
+  font-size: 13px;
+  cursor: pointer;
+}
+
 /* ----------- Loading ------------- */
 @import url('./navbar.css');
 

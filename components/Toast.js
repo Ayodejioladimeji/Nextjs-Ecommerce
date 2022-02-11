@@ -1,19 +1,12 @@
 import React from 'react';
+import { FaTimes } from 'react-icons/fa';
 
-const Toast = () => {
+const Toast = ({ bgColor, handleShow, msg }) => {
+  console.log(msg);
   return (
-    <div class='toast show'>
-      <div class='toast-header'>
-        <strong class='me-auto'>Toast Header</strong>
-        <button
-          type='button'
-          class='btn-close'
-          data-bs-dismiss='toast'
-        ></button>
-      </div>
-      <div class='toast-body'>
-        <p>Some text inside the toast body</p>
-      </div>
+    <div className={`toast show ${bgColor}`}>
+      <div className='toast-body'>{msg.msg}</div>
+      <FaTimes className='cancel' onClick={handleShow} />
     </div>
   );
 };
