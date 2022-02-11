@@ -21,6 +21,9 @@ const register = async (req, res) => {
     const errMsg = valid(email, username, password);
     if (errMsg) return res.status(400).json({ err: errMsg });
 
+    const user = await Users.find({ email });
+    if (user) return res.status(400).json({ err: 'This email already exists' });
+
     const passwordHash = await bcrypt.hash(password, 12);
 
     const newUser = new Users({
