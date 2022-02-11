@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import valid from './../utils/valid';
 
 const initialState = { email: '', username: '', password: '' };
 
@@ -13,6 +14,14 @@ const Register = () => {
     setUserData({ ...userData, [name]: value });
   };
 
+  // HANDLE SUBMIT
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const errMsg = valid(email, username, password);
+    if (errMsg) console.log(errMsg);
+  };
+
   return (
     <div className='register'>
       <Head>
@@ -22,7 +31,7 @@ const Register = () => {
       <h4>REGISTER TO CONTINUE</h4>
 
       <div className='register-box'>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='form-group'>
             <label htmlFor='exampleInputEmail1'>Email address</label>
             <input
