@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 export const Context = createContext();
 
-export const contextProvider = ({ children }) => {
+export const ContextProvider = ({ children }) => {
   const initialState = { notify: {}, auth: {} };
 
   const [state, dispatch] = useReducer(reducers, initialState);
