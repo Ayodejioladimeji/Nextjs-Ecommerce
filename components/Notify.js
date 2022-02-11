@@ -7,7 +7,6 @@ const Notify = () => {
   const [state, dispatch] = useContext(Context);
   const { notify } = state;
 
-  console.log(notify);
   return (
     <>
       {notify.loading && <Loading />}

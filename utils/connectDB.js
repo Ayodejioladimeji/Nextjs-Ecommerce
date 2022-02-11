@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { connect } from 'mongoose';
 
 const connectDB = () => {
   if (mongoose.connections[0].readyState) {
@@ -8,8 +8,6 @@ const connectDB = () => {
   mongoose.connect(
     process.env.MONGODB_URL,
     {
-      useCreateIndex: true,
-      useFindAndModify: false,
       useNewUrlParser: true,
       useUnifiedTopology: true,
     },
@@ -19,3 +17,5 @@ const connectDB = () => {
     }
   );
 };
+
+export default connectDB;

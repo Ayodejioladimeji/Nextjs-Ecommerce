@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useState, useContext } from 'react';
 import valid from './../utils/valid';
 import { Context } from './../store/Context';
+import { postData } from '../utils/fetchData';
 
 const initialState = { email: '', username: '', password: '' };
 
@@ -17,13 +18,16 @@ const Register = () => {
   };
 
   // HANDLE SUBMIT
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const errMsg = valid(email, username, password);
     if (errMsg) return dispatch({ type: 'NOTIFY', payload: { error: errMsg } });
 
-    dispatch({ type: 'NOTIFY', payload: { success: 'Account Created' } });
+    dispatch({ type: 'NOTIFY', payload: { loading: true } });
+
+    const res = await postData('auth/register', userData);
+    dispatch({ type: 'NOTIFY', payload: { success: res.msg } });
   };
 
   return (
